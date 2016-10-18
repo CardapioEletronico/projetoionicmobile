@@ -1,0 +1,23 @@
+<ion-view style="background-color: rgb(126, 22, 22);" id="page5" title="Lista Restaurantes ">
+    <ion-content class="has-header" padding="true">
+        <h2 style="color: rgb(255, 255, 255); font-weight: lighter; text-align: center;" id="listaRestaurantes-heading3">Escolha seu Restaurante!</h2>
+        <div style="width: 300px; height: 28px;" class="spacer"></div>
+        <form class="list " id="listaRestaurantes-form2">
+            <label style="" class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input placeholder="" type="search">
+            </label>
+        </form>
+        <div id="listaRestaurantes-card22" class="list card ">
+            <!-- <ion-item style="" ui-sref="autenticaODefaultPage" id="listaRestaurantes-list-item15">{{result.time}}</ion-item>
+            <ion-item style="" id="listaRestaurantes-list-item17">Camarões</ion-item>
+            <ion-item style="" id="listaRestaurantes-list-item18">Sal e Brasa</ion-item>
+            <ion-item style="" id="listaRestaurantes-list-item19">Temer</ion-item>
+            <ion-item style="" id="listaRestaurantes-list-item16">Bella Napoli</ion-item> -->
+            <div ng-repeat="restaurante in restaurantes">
+              <ion-item ui-sref="autenticaODefaultPage" id={{restaurante.Id}}>{{ restaurante.Descricao }} </ion-item>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>
