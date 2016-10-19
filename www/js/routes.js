@@ -7,10 +7,10 @@ angular.module('app.routes', [])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-    
-  
 
-      .state('tabsController.inicioTabDefaultPage', {
+
+
+      .state('tabs.inicio', {
     url: '/page2',
     views: {
       'tab1': {
@@ -21,7 +21,7 @@ angular.module('app.routes', [])
   })
 
   .state('autenticaODefaultPage', {
-    url: '/page6',
+    url: '/page6/{id:[0-9]}',
     templateUrl: 'templates/autenticaODefaultPage.html',
     controller: 'autenticaODefaultPageCtrl'
   })
@@ -32,7 +32,7 @@ angular.module('app.routes', [])
     controller: 'listaRestaurantesCtrl'
   })
 
-  .state('tabsController.cardapioDefaultPage', {
+  .state('tabs.cardapio', {
     url: '/page3',
     views: {
       'tab3': {
@@ -52,7 +52,7 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('tabsController.pedidosDefaultPage', {
+  .state('tabs.pedidos', {
     url: '/page4',
     views: {
       'tab2': {
@@ -62,14 +62,15 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('tabsController', {
-    url: '/page5',
+  .state('tabs', {
+    url: '/page5/{id:[0-9]}',
     templateUrl: 'templates/tabsController.html',
-    abstract:true
+    abstract: true,
+    controller: 'TabsCtrl'
   })
 
 $urlRouterProvider.otherwise('/page5')
 
-  
+
 
 });

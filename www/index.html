@@ -11,6 +11,8 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
@@ -75,5 +77,30 @@
         </ion-side-menu>
     </ion-side-menus>
 </div>
+<!-- <script language="javascript">
+function getQuerystring(key, default_)
+{
+  if (default_==null) default_="";
+  console.log(key);
+  key = key.replace(/[\\[]/,"\\\\\\[").replace(/[\\]]/,"\\\\\\]");
+  var regex = new RegExp("[\\\\?&]"+key+"=([^&#]*)");
+  var qs = regex.exec(window.location.href);
+  if(qs == null)
+    return default_;
+  else
+    return qs[1];
+}
+
+</script> -->
+
+<script type="text/javascript">
+function SetUserName()
+{
+console.log("chuparumcuepa");
+  // var userName = lalala;
+  // '<%Session["UserName"] = "' + userName + '"; %>';
+  // console.log('<%=Session["UserName"] %>');
+}
+</script>
   </body>
 </html>
