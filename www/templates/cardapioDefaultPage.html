@@ -8,7 +8,7 @@
             <ion-item style="" id="cardapioDefaultPage-list-item10">Sobremesas</ion-item>
             <ion-item style="" id="cardapioDefaultPage-list-item11">Bebidas</ion-item> -->
             <div ng-repeat="cardapio  in cardapios">
-              <ion-item ui-sref="tabsController.burritosDefaultPage" id={{cardapio.Id}}>{{ cardapio.Descricao }} </ion-item>
+              <ion-item ng-click="SetUserName()" ui-sref="burritosDefaultPage({id:cardapio.Id})" id={{cardapio.Id}}>{{ cardapio.Descricao }} </ion-item>
             </div>
         </ion-list>
     </ion-content>

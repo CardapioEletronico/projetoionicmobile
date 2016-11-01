@@ -1,6 +1,6 @@
 <ion-view style="background-color: rgb(148, 32, 30);" id="page7" title="Burritos Default Page">
     <ion-content class="has-header" padding="true">
-        <h1 style="color: rgb(255, 255, 255); font-weight: lighter; text-align: center;" id="burritosDefaultPage-heading13">Burritos</h1>
+        <h1 style="color: rgb(255, 255, 255); font-weight: lighter; text-align: center;" id="burritosDefaultPage-heading13">Produto</h1>
         <div id="burritosDefaultPage-card26" class="list card ">
             <ion-item style="" id="burritosDefaultPage-list-item33" class="item-icon-right  ">Burrito Simples
                 <i class="icon ion-fork"></i>
@@ -33,5 +33,11 @@
             <ion-item style="" id="burritosDefaultPage-list-item38" class="item-icon-left assertive  ">
                 <i class="icon ion-arrow-right-c"></i>Pedir</ion-item>
         </div>
+        
+<!-- <div id="burritosDefaultPage-card26" class="list card ">
+        <div ng-repeat="produto  in produtos">
+          <ion-item ng-click="SetUserName()" ui-sref="pedidosDefaultPage({id:produto.Id})" id={{produto.Id}}>{{ produto.Descricao }} </ion-item>
+        </div>
+</div> -->
     </ion-content>
 </ion-view>

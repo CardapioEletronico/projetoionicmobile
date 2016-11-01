@@ -42,14 +42,14 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('tabsController.burritosDefaultPage', {
-    url: '/page7',
-    views: {
-      'tab3': {
+  .state('burritosDefaultPage', {
+    url: '/page7/{id:[0-9]}',
+
+
         templateUrl: 'templates/burritosDefaultPage.html',
         controller: 'burritosDefaultPageCtrl'
-      }
-    }
+
+
   })
 
   .state('tabs.pedidos', {

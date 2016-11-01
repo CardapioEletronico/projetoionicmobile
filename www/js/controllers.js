@@ -25,6 +25,7 @@ function ($scope, $stateParams) {
 function ($scope, $stateParams, Data) {
 //console.log(Data.getUser());
   $scope.restaurante =  {Id: $stateParams.id};
+
 }])
 
 .controller('TabsCtrl',  ['$scope', '$stateParams', function($scope, $stateParams) {
@@ -60,27 +61,75 @@ function ($scope, $stateParams, Data) {
 
 })
 
-
-.controller('cardapioDefaultPageCtrl',function ($scope, $http) {
+//pode ler
+.controller('cardapioDefaultPageCtrl',function ($scope, $http,$stateParams, Data) {
   $http.get('http://10.21.0.137/20131011110061/api/cardapio').
   then(function(response) {
-  var eae = $scope.cardapios = response.data;
+  var eae = response.data;
   var name = window.location.href;
-  console.log(name);
-  //console.log(getQuerystring("id"));
-    // for(var i =0;i< eae.lenght;i++){
-    //   if(response.data[i].Id==){
-    //     $scope.cardapios = eae[i];
-    //   }
-    // }
+  var tabaco = [];
+  var key,length= 0;
+  var count=0;
+  for(key in eae) {
+    if(eae.hasOwnProperty(key)){
+      length++;
+    }
+  }
+  console.log(length);
+  console.log(eae);
+   var f = {Id: $stateParams.id};
+
+    for(var i =0;i< length;i++){
+
+      if(eae[i].Restaurante_id== f.Id){
+        count++
+          tabaco.push(eae[i]);
+
+      }
+    }
+    console.log(count);
+    console.log(tabaco);
+    $scope.cardapios = tabaco;
+
+
   });
 
 
 })
 
 .controller('burritosDefaultPageCtrl', ['$scope', '$stateParams', // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
-
+function ($scope, $stateParams, Data) {
+//$scope.cardapio =  {Id: $stateParams.id};
+  // $http.get('http://10.21.0.137/20131011110061/api/produto').
+  //  then(function(response) {
+  //  var eae = response.data;
+  //  var name = window.location.href;
+  //  var tabaco = [];
+  //   var key,length= 0;
+  //   var count=0;
+  //   for(key in eae) {
+  //     if(eae.hasOwnProperty(key)){
+  //       length++;
+  //     }
+  //   }
+  //   console.log(length);
+  //   console.log(eae);
+  //    var f = {Id: $stateParams.id};
+  //
+  //     for(var i =0;i< length;i++){
+  //
+  //       if(eae[i].Cardapio_id== f.Id){
+  //         count++
+  //           tabaco.push(eae[i]);
+  //
+  //       }
+  //     }
+  //     console.log(count);
+  //     console.log(tabaco);
+  //     $scope.cardapios = tabaco;
+  //
+  //
+  //   });
 
 }])
 
