@@ -32,6 +32,7 @@ function ($scope, $stateParams, Data) {
   console.log($stateParams);
   $scope.restaurante =  {Id: $stateParams.id};
 }])
+
 .controller('listaRestaurantesCtrl', function($scope, $http , Data) {
   console.log($scope);
 
@@ -97,41 +98,39 @@ function ($scope, $stateParams, Data) {
 
 })
 
-.controller('burritosDefaultPageCtrl', ['$scope', '$stateParams', // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams, Data) {
-//$scope.cardapio =  {Id: $stateParams.id};
-  // $http.get('http://10.21.0.137/20131011110061/api/produto').
-  //  then(function(response) {
-  //  var eae = response.data;
-  //  var name = window.location.href;
-  //  var tabaco = [];
-  //   var key,length= 0;
-  //   var count=0;
-  //   for(key in eae) {
-  //     if(eae.hasOwnProperty(key)){
-  //       length++;
-  //     }
-  //   }
-  //   console.log(length);
-  //   console.log(eae);
-  //    var f = {Id: $stateParams.id};
-  //
-  //     for(var i =0;i< length;i++){
-  //
-  //       if(eae[i].Cardapio_id== f.Id){
-  //         count++
-  //           tabaco.push(eae[i]);
-  //
-  //       }
-  //     }
-  //     console.log(count);
-  //     console.log(tabaco);
-  //     $scope.cardapios = tabaco;
-  //
-  //
-  //   });
+.controller('burritosDefaultPageCtrl',function ($scope, $http, $stateParams, Data) {
+  $http.get('http://10.21.0.137/20131011110061/api/produto').
+   then(function(response) {
+   var eae = response.data;
+   var name = window.location.href;
+   var tabaco = [];
+    var key,length= 0;
+    var count=0;
+    for(key in eae) {
+      if(eae.hasOwnProperty(key)){
+        length++;
+      }
+    }
+    console.log(length);
+   console.log(eae);
+   var f = {Id2: $stateParams.id2};
+   console.log(f.Id2);
+    for(var i =0;i< length;i++){
 
-}])
+        if(eae[i].Cardapio_id== f.Id2){
+          count++
+            tabaco.push(eae[i]);
+
+        }
+    }
+      console.log(count);
+      console.log(tabaco);
+      $scope.produtos = tabaco;
+
+
+    });
+
+})
 
 .controller('pedidosDefaultPageCtrl',function ($scope, $http) {
   $http.get('http://10.21.0.137/20131011110061/api/cardapio').

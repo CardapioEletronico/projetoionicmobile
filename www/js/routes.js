@@ -43,7 +43,7 @@ angular.module('app.routes', [])
   })
 
   .state('burritosDefaultPage', {
-    url: '/page7/{id:[0-9]}',
+    url: '/page7/{id2:[0-9]}',
 
 
         templateUrl: 'templates/burritosDefaultPage.html',
