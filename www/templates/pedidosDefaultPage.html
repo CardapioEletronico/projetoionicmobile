@@ -1,41 +1,29 @@
 <ion-view style="background-color: rgb(112, 24, 23);" id="page4" title="Pedidos Default Page">
-    <ion-content class="has-header" padding="true">
-        <div style="" id="pedidosDefaultPage-list-item-container1" class="item item-body ">
-            <h1 style="color: rgb(0, 0, 0); font-weight: lighter; text-align: center;" id="pedidosDefaultPage-heading6">Seus Pedidos</h1>
-            <div style="margin-top:0px;color:#000000;" id="pedidosDefaultPage-markdown1">
-                <p>Burrito Simples - 19,90</p>
-            </div>
-        </div>
-        <div style="" id="pedidosDefaultPage-list-item-container2" class="item item-body ">
-            <div style="margin-top:0px;color:#000000;" id="pedidosDefaultPage-markdown2">
-                <p>Refrigerante - 4,50</p>
-            </div>
-        </div>
-        <div style="" id="pedidosDefaultPage-list-item-container3" class="item item-body ">
-            <div style="margin-top:0px;color:#000000;" id="pedidosDefaultPage-markdown3">
-                <p>Milk-Shake de Chocolate - 10,00</p>
-            </div>
-        </div>
-        <div style="" id="pedidosDefaultPage-list-item-container4" class="item item-body ">
-            <div style="margin-top:0px;color:#000000;" id="pedidosDefaultPage-markdown4">
-                <p>Burrito Especial - 25,00</p>
-            </div>
-            <h2 style="color: rgb(0, 0, 0); font-weight: 300; text-align: right;" id="pedidosDefaultPage-heading7">Total : R$59,40</h2>
-        </div>
-        <div style="width: 300px; height: 38px;" class="spacer"></div>
-        <div style="" id="pedidosDefaultPage-list-item-container6" class="item item-body ">
-            <form class="list " id="pedidosDefaultPage-form6">
-                <label id="pedidosDefaultPage-select1" class="item item-select ">
-                    <span class="input-label">Select</span>
-                    <select>
-                        <option>Burrito Simples</option>
-                        <option>Refrigerante</option>
-                        <option>Milk-Shake de Chocolate</option>
-                        <option>Burrito Especial</option>
-                    </select>
-                </label>
-            </form>
-            <button class=" button button-assertive  button-block icon-left ion-ios-trash-outline " id="pedidosDefaultPage-button4">Cancelar Pedido</button>
-        </div>
-    </ion-content>
+  <ion-content class="has-header" padding="true">
+
+    <div style="" id="pedidosDefaultPage-list-item-container1" class="item item-body ">
+      <h1 style="color: rgb(0, 0, 0); font-weight: lighter; text-align: center;" id="pedidosDefaultPage-heading6">Seus Pedidos</h1>
+    </div>
+
+    <div ng-repeat="cardapio in cardapios" style="" id="pedidosDefaultPage-list-item-container2" class="item item-body ">
+      <div style="margin-top:0px;color:#000000;" id="pedidosDefaultPage-markdown2">
+        <p >{{cardapio.Descricao}} - R${{cardapio.Id}},00</p>
+      </div>
+    </div>
+
+
+
+    <div style="width: 300px; height: 38px;" class="spacer"></div>
+    <div style="" id="pedidosDefaultPage-list-item-container6" class="item item-body ">
+      <form class="list " id="pedidosDefaultPage-form6">
+        <label id="pedidosDefaultPage-select1" class="item item-select ">
+          <span class="input-label">Select</span>
+          <select>
+            <option ng-repeat="cardapio in cardapios">{{cardapio.Descricao}}</option>
+          </select>
+        </label>
+      </form>
+      <button class=" button button-assertive  button-block icon-left ion-ios-trash-outline " id="pedidosDefaultPage-button4">Cancelar Pedido</button>
+    </div>
+  </ion-content>
 </ion-view>

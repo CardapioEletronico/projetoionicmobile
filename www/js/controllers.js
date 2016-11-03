@@ -133,8 +133,24 @@ function ($scope, $stateParams, Data) {
 
 }])
 
-.controller('pedidosDefaultPageCtrl', ['$scope', '$stateParams', // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
+.controller('pedidosDefaultPageCtrl',function ($scope, $http) {
+  $http.get('http://10.21.0.137/20131011110061/api/cardapio').
+  then(function(response) {
+    var eae = $scope.cardapios = response.data;
+    var name = window.location.href;
+    });
+
+    $scope.getTotal = function(){
+        var total = 0;
+        console.log("Rabo");
+        for(var i = 0; i < $scope.cardapio.length; i++){
+            var product = $scope.cardapio[i];
+            total += (cardapio.Descricao);
+        }
+        return total;
+    };
+  //http://stackoverflow.com/questions/22731145/calculating-sum-of-repeated-elements-in-angularjs-ng-repeat
 
 
-}])
+
+});
