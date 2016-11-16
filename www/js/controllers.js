@@ -139,15 +139,23 @@ function ($scope, $stateParams, Data) {
     var name = window.location.href;
     });
 
-    $scope.getTotal = function(){
-        var total = 0;
-        console.log("Rabo");
-        for(var i = 0; i < $scope.cardapio.length; i++){
-            var product = $scope.cardapio[i];
-            total += (cardapio.Descricao);
-        }
-        return total;
-    };
+  //   $scope.delete = function(idx)
+  //   {
+  //     var delCardapio = $scope.cardapios[idx];
+   //
+  //    API.DeleteCardapio({id: delCardapio.id}, function(sucess){
+  //      $scope.cardapios.splice(idx, 1)
+  //    });
+  //  };
+
+  $scope.total = function($scope, $http) {
+      var total = 0;
+      angular.forEach($scope.cardapios.Id, function(cardapio) {
+          total += cardapios.Id;
+      })
+      return total;
+      console.log(total);
+  }
   //http://stackoverflow.com/questions/22731145/calculating-sum-of-repeated-elements-in-angularjs-ng-repeat
 
 

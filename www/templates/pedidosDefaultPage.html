@@ -5,25 +5,23 @@
       <h1 style="color: rgb(0, 0, 0); font-weight: lighter; text-align: center;" id="pedidosDefaultPage-heading6">Seus Pedidos</h1>
     </div>
 
-    <div ng-repeat="cardapio in cardapios" style="" id="pedidosDefaultPage-list-item-container2" class="item item-body ">
-      <div style="margin-top:0px;color:#000000;" id="pedidosDefaultPage-markdown2">
-        <p >{{cardapio.Descricao}} - R${{cardapio.Id}},00</p>
+    <div class="item item-body">
+      <div ng-repeat="cardapio in cardapios" id="pedidosDefaultPage-list-item-container2"  class="item item-body">
+        <div style="margin-top:0px;color:#000000;" id="pedidosDefaultPage-markdown2">
+          <p style="border-style:none;" class="item item-icon-right" href="#">
+            {{cardapio.Descricao}} - R${{cardapios.Id}},00
+            <button href ng-click="delete" style=" background-color: Transparent; border:none; /* Green */" class="icon ion-ios-close"></button>
+          </p>
+
+        </div>
       </div>
+      <button class="button button-balanced  button-block icon-right ion-android-checkmark-circle " id="pedidosDefaultPage-button4">Finalizar Pedidos</button>
+
     </div>
+
 
 
 
     <div style="width: 300px; height: 38px;" class="spacer"></div>
-    <div style="" id="pedidosDefaultPage-list-item-container6" class="item item-body ">
-      <form class="list " id="pedidosDefaultPage-form6">
-        <label id="pedidosDefaultPage-select1" class="item item-select ">
-          <span class="input-label">Select</span>
-          <select>
-            <option ng-repeat="cardapio in cardapios">{{cardapio.Descricao}}</option>
-          </select>
-        </label>
-      </form>
-      <button class=" button button-assertive  button-block icon-left ion-ios-trash-outline " id="pedidosDefaultPage-button4">Cancelar Pedido</button>
-    </div>
   </ion-content>
 </ion-view>
