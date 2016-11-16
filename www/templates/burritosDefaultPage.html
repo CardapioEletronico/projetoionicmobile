@@ -37,14 +37,11 @@
 <div id="burritosDefaultPage-card26" class="list card ">
 
 
-
-
-
           <ion-item ng-click="SetUserName()" style="" id="burritosDefaultPage-list-item33" class="item-icon-right  ">{{ produto.Descricao }}
               <i class="icon ion-fork"></i>
           </ion-item>
-          <div class=" item item-image">
-              <img style="display: block; margin-left: auto; margin-right: auto;" src={{produto.Foto}} width="100%" height="100%">
+          <div  style="width: 10%; height: 10%;" class=" item item-image">
+              <img style="display: block; margin-left: auto; margin-right: auto; " src={{produto.Foto}} width="10%" height="10%">
           </div>
 
           <form class="list " id="burritosDefaultPage-form7">
@@ -54,7 +51,7 @@
               </label>
           </form>
 
-          <ion-item style="" id="burritosDefaultPage-list-item34" class="item-icon-left assertive ng-click="SetUserName()" ui-sref="tabs.pedidos({id3:produto.Id3})" id={{produto.Id}}  ">
+          <ion-item style="" id="burritosDefaultPage-list-item34" class="item-icon-left assertive  " ng-click="SetUserName()" ui-sref="tabs.pedidos({id3:cardapio.Id3})" id={{cardapio.Id}}>{{ cardapio.Descricao }}>
               <i class="icon ion-arrow-right-c"></i>Pedir</ion-item>
 
         </div>
