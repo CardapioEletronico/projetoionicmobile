@@ -40,18 +40,42 @@
     <ion-item ng-click="SetUserName()" style="" id="burritosDefaultPage-list-item33" class="item-icon-right  ">{{ produto.Descricao }}
       <i class="icon ion-fork"></i>
     </ion-item>
-    <div  style="width: 10%; height: 10%;" class=" item item-image">
-      <img style="display: block; margin-left: auto; margin-right: auto; " src={{produto.Foto}} width="100%" height=100%">
+    <div  style="width: 7.5em; height: 10em;" class=" item item-image">
+      <img style="display: block; margin-left: auto; margin-right: auto; " src={{produto.Foto}} width="100%" height="100%">
     </div>
 
-    <form class="list " id="burritosDefaultPage-form7">
-      <label id="burritosDefaultPage-input4" class="item item-input ">
-        <span class="input-label">Informações adicionais</span>
-        <input placeholder="" type="text">
-      </label>
-    </form>
 
-    <ion-item style="" id="burritosDefaultPage-list-item34" class="item-icon-left assertive  " ng-click="SetUserName()" ui-sref="tabs.pedidos({id3:cardapio.Id3})" id={{cardapio.Id}}>{{ cardapio.Descricao }}>
+
+
+    <div class="list">
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+      Quantidade
+    </div>
+    <select>
+      <option selected>0</option>
+      <option>1</option>
+      <option>2</option>
+      <option >3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+    </select>
+  </label>
+
+  <div class="list list-inset">
+  <label class="item item-input">
+    <input type="text" placeholder="Informaçoes Adicionais">
+  </label>
+</div>
+
+
+</div>
+
+    <ion-item style="" id="burritosDefaultPage-list-item34" class="item-icon-left assertive  " ng-click="SetUserName();showPopup()" ui-sref="tabs.pedidos({id3:cardapio.Id3})" id={{cardapio.Id}}>{{ cardapio.Descricao }}>
       <i class="icon ion-arrow-right-c"></i>Adicionar ao Carrinho</ion-item>
 
     </div>

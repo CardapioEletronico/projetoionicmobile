@@ -64,6 +64,41 @@ function ($scope, $stateParams, Data) {
 
 //pode ler
 .controller('cardapioDefaultPageCtrl',function ($scope, $http,$stateParams, Data) {
+
+  // When button is clicked, the popup will be shown...
+    $scope.showPopup = function() {
+       $scope.data = {}
+
+       // Custom popup
+       var myPopup = $ionicPopup.show({
+          template: '<input type = "text" ng-model = "data.model">',
+          title: 'Confirme',
+          subTitle: 'Tem certeza que deseja adicionar esse item ao carrinho?',
+          scope: $scope,
+
+          buttons: [
+             { text: 'Cancelar' }, {
+                text: '<b>Sim</b>',
+                type: 'button-positive',
+                   onTap: function(e) {
+ 						//Adicionar código para inserir no carrinho
+                      if (!$scope.data.model) {
+                         //don't allow the user to close unless he enters model...
+                            e.preventDefault();
+                      } else {
+                         return $scope.data.model;
+                      }
+                   }
+             }
+          ]
+       });
+
+       myPopup.then(function(res) {
+          console.log('Tapped!', res);
+       });
+    };
+
+
   $http.get('http://10.21.0.137/20131011110061/api/cardapio').
   then(function(response) {
   var eae = response.data;
@@ -133,11 +168,27 @@ function ($scope, $stateParams, Data) {
 })
 
 .controller('pedidosDefaultPageCtrl',function ($scope, $http) {
-  $http.get('http://10.21.0.137/20131011110061/api/cardapio').
-  then(function(response) {
-    var eae = $scope.cardapios = response.data;
+  $http.get('http://10.21.0.137/20131011110061/api/itempedido').
+  then(
+    function(response) {
+    var eae = $scope.itempedidos = response.data;
     var name = window.location.href;
-    });
+    console.log("Eae");
+    }
+
+    // function(response){
+    // }
+  );
+
+
+
+
+    // $http.get('http://10.21.0.137/20131011110061/api/cardapio').
+    // then(function(response) {
+    //   var total = 0;
+    //   angular.forEach($scope.cardapios.Id, function(cardapio) {
+    //       total += cardapios.Id;
+    //   });
 
   //   $scope.delete = function(idx)
   //   {
@@ -147,15 +198,15 @@ function ($scope, $stateParams, Data) {
   //      $scope.cardapios.splice(idx, 1)
   //    });
   //  };
-
-  $scope.total = function($scope, $http) {
-      var total = 0;
-      angular.forEach($scope.cardapios.Id, function(cardapio) {
-          total += cardapios.Id;
-      })
-      return total;
-      console.log(total);
-  }
+  // $http.get('http://10.21.0.137/20131011110061/api/cardapio').
+  // then(function(response) {
+      // var total = 0;
+      // angular.forEach($scope.cardapios.Id, function(cardapio) {
+      //     total += cardapios.Id;
+  //     })
+  //     return total;
+  //     console.log("Rabo");
+  // }
   //http://stackoverflow.com/questions/22731145/calculating-sum-of-repeated-elements-in-angularjs-ng-repeat
 
 

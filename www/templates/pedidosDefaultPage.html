@@ -6,11 +6,11 @@
     </div>
 
     <div class="item item-body">
-      <div ng-repeat="cardapio in cardapios" id="pedidosDefaultPage-list-item-container2"  class="item item-body">
+      <div ng-repeat="itempedido in itempedidos" id="pedidosDefaultPage-list-item-container2"  class="item item-body">
         <div style="margin-top:0px;color:#000000;" id="pedidosDefaultPage-markdown2">
           <p style="border-style:none;" class="item item-icon-right" href="#">
-            {{cardapio.Descricao}} - R${{cardapios.Id}},00
-            <button href ng-click="delete" style=" background-color: Transparent; border:none; /* Green */" class="icon ion-ios-close"></button>
+            {{itempedido.Produto_Id}} - Quantidade:{{itempedido.Quantidade}}
+            <button  style=" background-color: Transparent; border:none;"  class="icon ion-ios-close"></button>
           </p>
 
         </div>
