@@ -158,6 +158,8 @@ function ($scope, $stateParams, Data) {
 
         }
     }
+
+
       console.log(count);
       console.log(tabaco);
       $scope.produtos = tabaco;
