@@ -53,7 +53,7 @@
     <div class="input-label">
       Quantidade
     </div>
-    <select>
+    <select >
       <option selected>0</option>
       <option>1</option>
       <option>2</option>
@@ -75,7 +75,7 @@
 
 </div>
 
-    <ion-item style="" id="burritosDefaultPage-list-item34" class="item-icon-left assertive" ng-click="SetUserName();showPopup()" ui-sref="tabs.pedidos({id3:cardapio.Id3})" id={{cardapio.Id}}>{{ cardapio.Descricao }}>
+    <ion-item style="" id="burritosDefaultPage-list-item34" class="item-icon-left assertive" ng-click="postItem();" ui-sref="tabs.pedidos({id3:produto.Id})" id={{produto.Id}}>{{ cardapio.Descricao }}>
       <i class="icon ion-arrow-right-c"></i>Adicionar ao Carrinho</ion-item>
 
     </div>
