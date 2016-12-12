@@ -173,14 +173,18 @@ function ($scope, $stateParams, Data) {
   var config = {
     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
   }
-
+  $scope.quants = [0,1,2,3,4,5,6,7,8];
+  $scope.search=function(item)
+  {
+  var quantidade = item;
+  }
   var nsei ={Id3: $stateParams.Id3};
   var aff = {
     //Hora = 'PT10H',
     Id: 3,
     Pedido_Id: 1,
     Produto_Id: 1,
-    Quantidade: 3,//fazer
+    Quantidade: quantidade,//fazer
     Situacao: 1
   };
   /*$scope.itempedido ={
@@ -193,6 +197,7 @@ function ($scope, $stateParams, Data) {
 };*/
 var data = aff;
 console.log(data);
+
 
 // AQUI DEU CERTO PORRA
 $scope.postItem = function(){
@@ -221,10 +226,21 @@ $scope.postItem = function(){
       console.log("Eae");
     }
 
+
+
     // function(response){
     // }
 
-  )});
+  )
+  $scope.remove = function(itempedidos){
+
+
+    var rola = $scope.itempedido.indexOf(itempedidos);
+    $scope.itempedido.splice(rola, 1);
+  }
+
+
+});
 
 
 

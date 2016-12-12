@@ -46,23 +46,22 @@
 
 
 
-
     <div class="list">
 
   <label class="item item-input item-select">
     <div class="input-label">
       Quantidade
     </div>
-    <select >
-      <option selected>0</option>
-      <option>1</option>
+    <select ng-model="singleSelect"ng-change="search(singleSelect)">
+       <option ng-repeat ="quant in quants">{{quant}}</option>
+      <!--<option>1</option>
       <option>2</option>
       <option>3</option>
       <option>4</option>
       <option>5</option>
       <option>6</option>
       <option>7</option>
-      <option>8</option>
+      <option>8</option> -->
     </select>
   </label>
 
