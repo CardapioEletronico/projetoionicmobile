@@ -1,4 +1,4 @@
-<ion-view style="background-color: rgb(112, 24, 23);" id="page4" title="Pedidos Default Page">
+<ion-view style="background-color: rgb(112, 24, 23);" id="page4" title="Carrinho">
   <ion-content class="has-header" padding="true">
 
     <div style="" id="pedidosDefaultPage-list-item-container1" class="item item-body ">
@@ -10,7 +10,7 @@
         <div style="margin-top:0px;color:#000000;" id="pedidosDefaultPage-markdown2">
           <p style="border-style:none;" class="item item-icon-right" href="#" >
             {{itempedido.Produto_Id}} - Quantidade:{{itempedido.Quantidade}}
-            <button  style=" background-color: Transparent; border:none;"  class="icon ion-ios-close" ng-click ="remove()"></button>
+            <button  style=" background-color: Transparent; border:none;"  class="icon ion-ios-close" ng-click ="remove($index)"></button>
           </p>
 
         </div>

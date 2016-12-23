@@ -176,6 +176,7 @@ function ($scope, $stateParams, Data) {
   $scope.quants = [0,1,2,3,4,5,6,7,8];
   $scope.search=function(item)
   {
+
   var quantidade = item;
   }
   var nsei ={Id3: $stateParams.Id3};
@@ -184,7 +185,7 @@ function ($scope, $stateParams, Data) {
     Id: 3,
     Pedido_Id: 1,
     Produto_Id: 1,
-    Quantidade: quantidade,//fazer
+    // Quantidade: parseInt(quantidade,10),//fazer
     Situacao: 1
   };
   /*$scope.itempedido ={
@@ -232,11 +233,9 @@ $scope.postItem = function(){
     // }
 
   )
-  $scope.remove = function(itempedidos){
+  $scope.remove = function($index){
 
-
-    var rola = $scope.itempedido.indexOf(itempedidos);
-    $scope.itempedido.splice(rola, 1);
+    $scope.itempedidos.splice($index, 1);
   }
 
 
