@@ -173,7 +173,7 @@ function ($scope, $stateParams, Data) {
   var config = {
     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
   }
-  $scope.quants = [0,1,2,3,4,5,6,7,8];
+  $scope.quants = [1,2,3,4,5,6,7,8];
   $scope.search=function(item)
   {
 
@@ -184,7 +184,7 @@ function ($scope, $stateParams, Data) {
     //Hora = 'PT10H',
     Id: 3,
     Pedido_Id: 1,
-    Produto_Id: 1,
+    Produto_Id: 3,
     // Quantidade: parseInt(quantidade,10),//fazer
     Situacao: 1
   };
@@ -219,10 +219,10 @@ $scope.postItem = function(){
 })
 
 .controller('pedidosDefaultPageCtrl',function ($scope, $http) {
-  $http.get('http://10.21.0.137/20131011110061/api/itempedido').
+  $http.get('http://10.21.0.137/20131011110061/api/itempedidoproduto').
   then(
     function(response) {
-      var eae = $scope.itempedidos = response.data;
+      var eae = $scope.itempedidoprodutos = response.data;
       var name = window.location.href;
       console.log("Eae");
     }
@@ -235,23 +235,15 @@ $scope.postItem = function(){
   )
   $scope.remove = function($index){
 
-    $scope.itempedidos.splice($index, 1);
+    $scope.itempedidoprodutos.splice($index, 1);
   }
 
 
 });
 
-angular.module('mySuperApp', ['ionic'])
+angular.module('mySuperApp', [])
 .controller('PopupCtrl',function($scope, $ionicPopup, $timeout) {
 
- // Triggered on a button click, or some other target
- $scope.showPopup = function() {
-   $scope.data = {}
-
-   $timeout(function() {
-      myPopup.close(); //close the popup after 3 seconds for some reason
-   }, 3000);
-  };
    // A confirm dialog
    $scope.showConfirm = function() {
      var confirmPopup = $ionicPopup.confirm({

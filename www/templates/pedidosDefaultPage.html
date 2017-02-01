@@ -22,10 +22,10 @@
         </div>
 
         <div class="item item-body">
-          <div ng-repeat="itempedido in itempedidos" id="pedidosDefaultPage-list-item-container2"  class="item item-body">
+          <div ng-repeat="itempedidoproduto in itempedidoprodutos" id="pedidosDefaultPage-list-item-container2"  class="item item-body">
             <div style="margin-top:0px;color:#000000;" id="pedidosDefaultPage-markdown2">
               <p style="border-style:none;" class="item item-icon-right" href="#" >
-                {{itempedido.Produto_Id}} - Quantidade:{{itempedido.Quantidade}}
+                {{itempedidoproduto.Descricao}} - Quantidade:{{itempedidoproduto.Quantidade}}
                 <!-- <button  style=" background-color: Transparent; border:none;"  class="icon ion-ios-close" ng-click ="remove($index)"></button> -->
                 <button class="button icon ion-ios-close" ng-click ="remove($index)"></button>
 
