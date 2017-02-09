@@ -3,14 +3,16 @@
         <h1 style="color: rgb(255, 255, 255); font-weight: lighter; text-align: center;" id="autenticaODefaultPage-heading5">Seja bem vindo !</h1>
         <div style="width: 300px; height: 28px;" class="spacer"></div>
         <div>
-            <img style="display: block; margin-left: auto; margin-right: auto;" src="img/gtEk0eKbSZ01h2mhDyYA_Amexicana.png" width="100%" height="auto">
+            <img style="display: block; margin-left: auto; margin-right: auto;" src="img/logo.jpg" width="100%" height="auto">
         </div>
         <form class="list " id="autenticaODefaultPage-form3">
             <label id="autenticaODefaultPage-input1" class="item item-input ">
                 <span class="input-label">Código de abertura</span>
-                <input placeholder="" type="text">
+                <input placeholder="" type="text" ng-model="myVar">
             </label>
         </form>
-        <a class=" button button-balanced  button-block icon-right ion-android-checkmark-circle " style="text-align:left;" id="autenticaODefaultPage-button2" ui-sref="tabs.inicio({id:restaurante.Id})">Abrir Mesa</a>
+        <!-- <a class ="button button-balanced" ng-click='add(myVar)'>cu</a> -->
+        <a class=" button button-balanced  button-block icon-right ion-android-checkmark-circle" ng-click="getAbertura(myVar)" style="text-align:left;" id="autenticaODefaultPage-button2" ui-sref="tabs.inicio({id:restaurante.Id})">Abrir Mesa</a>
     </ion-content>
 </ion-view>
+<!-- ng-click="getAbertura()" -->

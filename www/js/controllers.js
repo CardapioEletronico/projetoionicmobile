@@ -18,15 +18,59 @@ angular.module('app.controllers', [])
 .controller('inicioTabDefaultPageCtrl', ['$scope', '$stateParams', // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams) {
 
-
 }])
 
-.controller('autenticaODefaultPageCtrl', ['$scope', '$stateParams', // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams, Data) {
+.controller('autenticaODefaultPageCtrl', function ($scope, $stateParams, $http) {
   //console.log(Data.getUser());
   $scope.restaurante =  {Id: $stateParams.id};
+  //  var cliente;
+  // $scope.add = function(myVar)
+  //   {
+  //     cliente = myVar;
+  //     console.log(cliente);
+  //   };
+  //   var darude = cliente;
+  //   console.log(darude);
+  $scope.getAbertura = function(myVar){
+    cliente = myVar;
+    console.log(cliente);
+    $http.get('http://10.21.0.137/20131011110061/api/abertura').
+    then(function(response) {
+      var eae = response.data;
+      var name = window.location.href;
+      var tabaco = [];
+      var key,length= 0;
+      var count=0;
+      for(key in eae) {
+        if(eae.hasOwnProperty(key)){
+          length++;
+        }
+      }
+      console.log(length);
+      console.log(eae);
+      var f = cliente;
+      console.log(f);
+      for(var i =0;i< length;i++){
 
-}])
+        if(eae[i].Cliente== f){
+          count++
+          tabaco.push(eae[i]);
+
+        }
+      }
+      console.log(count);
+      console.log(tabaco);
+      $scope.mesinha=tabaco[0].Cliente;
+
+
+
+    });
+
+
+
+  };
+
+})
 
 .controller('TabsCtrl',  ['$scope', '$stateParams', function($scope, $stateParams) {
   console.log($stateParams);
@@ -202,8 +246,6 @@ console.log(data);
 
 // AQUI DEU CERTO PORRA
 $scope.postItem = function(){
-
-  //ng-model="itempedido.quantidade"
   $http.post('http://10.21.0.137/20131011110061/api/itempedido', data, config)
   .success(function(data,status,headers,config){
     $scope.PostDataResponse = data;
@@ -216,6 +258,7 @@ $scope.postItem = function(){
   });
 
 };
+
 })
 
 .controller('pedidosDefaultPageCtrl',function ($scope, $http) {
